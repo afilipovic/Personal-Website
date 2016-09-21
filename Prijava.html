@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="dizajn.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<title>Prijava</title>
+	
+	</head>
+		
+	
+	<body bgcolor="silver">
+	
+				<div id="naslov1">
+			<h2>Web Programiranje</h2>
+				</div>
+	<!-- Izbornik -->
+	<div class="menu">
+		<table width=100%>
+			<tr> 
+				<td><a href="Početna.html">Početna</a></td>
+				<td><a href="Fakultet.html">Fakultet</a></td>
+				<td><a href="Privatno.html">Privatno</a></td>
+				<td><a href="Životopis.html">Životopis</a></td>
+				<td><a href="Kontakt.html">Kontakt</a></td>
+			<tr>
+		</table>
+		
+	</div>
+	<div class="naslovi"><h2>Prijava i ispis postojećih korisnika</h2>
+	</div>
+	<!-- Obrazac za prijavu -->
+	<div id="ObrazacZaPrijavu">
+		<form align="right" method="POST" action="" >
+			<strong>Prijava</strong><br/>
+			Ime: <input type="text" name="Ime" id="Ime"/><br/>
+			Prezime:<input type="text" name="Prezime" id="Prezime"/><br/>
+			Adresa:<input type="text" name="Adresa" id="Adresa"/><br/>
+			e-mail:<input type="text" name="Email" id="Email"/><br/>
+			Username:<input type="text" name="Username" id="Username"/><br/>
+			Lozinka:<input type="password" name="Password" id="Password"/><br/>
+			<input type="submit" name="submit" id="submit" value="Submit">
+		</form>
+	</div> 
+	
+	
+	
+	
+	
+	
+	 <?php
+    $name = $_POST["Ime"];
+    $lname = $_POST["Prezime"];
+	$adr = $_POST["Adresa"];
+	$eml = $_POST["Email"];
+	$usr = $_POST["Username"];
+	$pass = $_POST["Password"];
+    $posts = file_get_contents("posts.txt");
+    $posts = "$name - $lname - $adr - $eml - $usr - $pass\n" . $posts;
+    file_put_contents("posts.txt", $posts);
+    echo $posts; 
+ ?>
+ <br/>
+ </body>
+ </html>

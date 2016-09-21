@@ -1,0 +1,43 @@
+
+a:visited
+{ color: DarkOrange;
+ text-decoration: none; }
+a:hover
+{ color: blue; }
+a:active
+{ color:yellow;}
+
+.menu {
+	text-align: center;
+	background-color: black;
+}
+
+#naslov1 {
+	color: black;
+
+}
+
+.naslovi {
+	color: silver;
+	background-color: black;
+	text-align: center;
+}
+
+.ofakultetu {
+	text-align: center;
+}
+
+#resume {
+	text-align: left;
+	font-family:'Titillium Web', sans-serif;
+	
+}
+
+#Obavijesti {
+	background-color: white;
+	opacity: 0.35;
+	font-family:'Titillium Web', sans-serif;
+	font-size:18pt;
+	
+}
+

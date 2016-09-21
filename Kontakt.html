@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="dizajn.css">
+		<meta charset="utf-8">
+		<title>Web Projekt</title>
+	
+	</head>
+		
+	
+	<body bgcolor="silver">
+	
+	<div id="naslov1"><h2>Web Programiranje</h2>
+	</div>
+	
+	<div class="menu">
+		<table width=100%>
+			<tr> 
+				<td><a href="Početna.html">Početna</a></td>
+				<td><a href="Fakultet.html">Fakultet</a></td>
+				<td><a href="Privatno.html">Privatno</a></td>
+				<td><a href="Životopis.html">Životopis</a></td>
+				<td><a href="Kontakt.html">Kontakt</a></td>
+			<tr>
+		</table>
+		
+	</div>
+	
+	<div class="naslovi"><h2>Kontakt</h2>
+	</div>
+
+	
+	<p align="center">Za kontaktiranje vlasnika stranice putem e-maila ispunite sljedeći obrazac.</p>
+<!--New Form -->
+<?php 
+if(isset($_POST['submit'])){
+    $to = "0blacktop0@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Poruka je poslana. Hvala " . $first_name . ", kontaktirat ću Vas uskoro.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
+<!DOCTYPE html>
+<head>
+<title>Form submission</title>
+</head>
+<body>
+
+<form action="" method="post" align="right">
+Ime: <input type="text" name="first_name"><br>
+Prezime: <input type="text" name="last_name"><br>
+Email: <input type="text" name="email"><br>
+Poruka:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html> 
+
+<!--New Form -->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+	
+	
+	
+	
+<div class="naslovi"><a href="Prijava.html"><h2>Prijava i ispis korisnika</h2><a/>
+	</div>
+
+
+
+
+
+	
+	</body>
+
+
+</html>
